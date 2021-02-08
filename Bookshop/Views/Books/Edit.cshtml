@@ -1,17 +1,16 @@
 ﻿@model Bookshop.Models.Book
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Book";
 }
 
-<h2>Edit</h2>
+<h2 class="col-md-7 col-md-offset-5">Edit Book</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Book</h4>
+    <div class="form-horizontal col-md-9 col-md-offset-3">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -49,5 +48,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Book List", "Index")
 </div>
