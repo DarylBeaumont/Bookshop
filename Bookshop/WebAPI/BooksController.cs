@@ -111,7 +111,7 @@ namespace Bookshop.WebAPI
         /// Deletes specified book from Books table.
         /// </summary>
         /// <param name="id">ID of book to be deleted.</param>
-        /// <returns></returns>
+        /// <returns>Book object deleted.</returns>
         // DELETE: api/Books/5
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> DeleteBook(int id)
