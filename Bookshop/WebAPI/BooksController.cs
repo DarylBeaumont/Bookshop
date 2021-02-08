@@ -18,12 +18,21 @@ namespace Bookshop.WebAPI
     {
         private BookshopContext db = new BookshopContext();
 
+        /// <summary>
+        /// Returns all books from the Books tables.
+        /// </summary>
+        /// <returns>All books in collection.</returns>
         // GET: api/Books
         public IQueryable<Book> GetBooks()
         {
             return db.Books;
         }
 
+        /// <summary>
+        /// Gets a specific book based on ID passed in.
+        /// </summary>
+        /// <param name="id">ID of requested book.</param>
+        /// <returns>Singular book requested.</returns>
         // GET: api/Books/5
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> GetBook(int id)
@@ -37,6 +46,12 @@ namespace Bookshop.WebAPI
             return Ok(book);
         }
 
+        /// <summary>
+        /// Updates the particular book with the information provided.
+        /// </summary>
+        /// <param name="id">ID of the book to be updated.</param>
+        /// <param name="book">Updated book object.</param>
+        /// <returns>Book object after update.</returns>
         // PUT: api/Books/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutBook(int id, Book book)
@@ -72,6 +87,11 @@ namespace Bookshop.WebAPI
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Creates a new book in the Books table.
+        /// </summary>
+        /// <param name="book">Book object to be inserted.</param>
+        /// <returns>New book object as it appears in the collection.</returns>
         // POST: api/Books
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> PostBook(Book book)
@@ -87,6 +107,11 @@ namespace Bookshop.WebAPI
             return CreatedAtRoute("DefaultApi", new { id = book.Id }, book);
         }
 
+        /// <summary>
+        /// Deletes specified book from Books table.
+        /// </summary>
+        /// <param name="id">ID of book to be deleted.</param>
+        /// <returns></returns>
         // DELETE: api/Books/5
         [ResponseType(typeof(Book))]
         public async Task<IHttpActionResult> DeleteBook(int id)
