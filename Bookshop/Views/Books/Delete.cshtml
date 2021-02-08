@@ -1,16 +1,13 @@
 ﻿@model Bookshop.Models.Book
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Book";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<h3 class="col-md-8 col-md-offset-4">Are you sure you want to delete this book?</h3>
 <div>
-    <h4>Book</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-md-8 col-md-offset-4">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
         </dt>
@@ -41,8 +38,9 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input style="left:50%; position:relative;" type="submit" value="Delete" class="btn btn-default" />
+            <hr />
+            @Html.ActionLink("Back to List Book", "Index")
         </div>
     }
 </div>
