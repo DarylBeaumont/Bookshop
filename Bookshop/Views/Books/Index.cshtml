@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Bookshop.Models.Book>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Books";
 }
 
-<h2>Index</h2>
+<h2 class="col-md-offset-4 col-md-8">Our Book Collection</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -42,3 +39,5 @@
 }
 
 </table>
+
+<input type="button" value="Add new book" class="col-md-offset-4 col-md-8" onclick="location.href='@Url.Action("Create", "Books")'" />
